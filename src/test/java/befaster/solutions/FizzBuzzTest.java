@@ -11,16 +11,18 @@ public class FizzBuzzTest {
 	@Test
 	public void testDeluxe() {
 		assertTrue(FizzBuzz.numberIsDeluxe(88));
+		assertFalse(FizzBuzz.numberIsFakeDeluxe(88));
 		assertTrue(FizzBuzz.numberIsDeluxe(44));
+		assertFalse(FizzBuzz.numberIsFakeDeluxe(44));
 	}
 	
 	@Test
 	public void testFakeDeluxe() {
-		assertTrue(FizzBuzz.numberIsDeluxe(777));
-		assertTrue(FizzBuzz.numberIsDeluxe(33));
-		assertTrue(FizzBuzz.numberIsDeluxe(9999));
-		assertTrue(FizzBuzz.numberIsDeluxe(55));
-		assertTrue(FizzBuzz.numberIsDeluxe(5555));
+		assertTrue(FizzBuzz.numberIsFakeDeluxe(777));
+		assertTrue(FizzBuzz.numberIsFakeDeluxe(33));
+		assertTrue(FizzBuzz.numberIsFakeDeluxe(9999));
+		assertTrue(FizzBuzz.numberIsFakeDeluxe(55));
+		assertTrue(FizzBuzz.numberIsFakeDeluxe(5555));
 	}
 	
 	@Test
@@ -34,27 +36,45 @@ public class FizzBuzzTest {
 	}
 	
 	@Test
+	public void testMultipleOfThreeAndFakeDeluxe() {
+		assertThat(FizzBuzz.fizzBuzz(33), equalTo(FizzBuzz.FIZZFAKEDELUXE));
+		assertThat(FizzBuzz.fizzBuzz(9999), equalTo(FizzBuzz.FIZZFAKEDELUXE));
+	}
+	
+	@Test
 	public void testMultipleOfThreeAndDeluxe() {
-		assertThat(FizzBuzz.fizzBuzz(33), equalTo(FizzBuzz.FIZZDELUXE));
-		assertThat(FizzBuzz.fizzBuzz(9999), equalTo(FizzBuzz.FIZZDELUXE));
+		// any numbers?
+		assertTrue(true);
 	}
 	
 	@Test
-	public void testMultipleOfFiveAndDeluxe() {
-		assertThat(FizzBuzz.fizzBuzz(55), equalTo(FizzBuzz.BUZZDELUXE));
-		assertThat(FizzBuzz.fizzBuzz(5555), equalTo(FizzBuzz.BUZZDELUXE));
+	public void testMultipleOfFiveAndFakeDeluxe() {
+		assertThat(FizzBuzz.fizzBuzz(55), equalTo(FizzBuzz.BUZZFAKEDELUXE));
+		assertThat(FizzBuzz.fizzBuzz(5555), equalTo(FizzBuzz.BUZZFAKEDELUXE));
 	}
 	
 	@Test
-	public void testJustDeluxe() {
+	public void testMultipleOfFiveAndTrueDeluxe() {
+		// these don't exist
+		assertTrue(true);
+	}
+	
+	@Test
+	public void testJustTrueDeluxe() {
 		assertThat(FizzBuzz.fizzBuzz(88), equalTo(FizzBuzz.DELUXE));
 		assertThat(FizzBuzz.fizzBuzz(44), equalTo(FizzBuzz.DELUXE));
 	}
 	
 	@Test
+	public void testJustFakeDeluxe() {
+		assertThat(FizzBuzz.fizzBuzz(77), equalTo(FizzBuzz.FAKEDELUXE));
+		assertThat(FizzBuzz.fizzBuzz(11), equalTo(FizzBuzz.FAKEDELUXE));
+	}
+	
+	@Test
 	public void testMultipleOfFiveAndThreeAndDeluxe() {
 		// I don't think there are any numbers that satisfy this criteria between 1 and 9999
-		assertThat(FizzBuzz.fizzBuzz(555), equalTo(FizzBuzz.FIZZBUZZDELUXE));
+		assertThat(FizzBuzz.fizzBuzz(555), equalTo(FizzBuzz.FIZZBUZZFAKEDELUXE));
 	}
 	
 	@Test
