@@ -41,8 +41,8 @@ public class FizzBuzzTest {
 	
 	@Test
 	public void testMultipleOfThreeAndFakeDeluxe() {
+		assertThat(FizzBuzz.fizzBuzz(3), equalTo(FizzBuzz.FIZZFAKEDELUXE));
 		assertThat(FizzBuzz.fizzBuzz(33), equalTo(FizzBuzz.FIZZFAKEDELUXE));
-		assertThat(FizzBuzz.fizzBuzz(9999), equalTo(FizzBuzz.FIZZFAKEDELUXE));
 	}
 	
 	@Test
@@ -65,6 +65,9 @@ public class FizzBuzzTest {
 		assertThat(FizzBuzz.fizzBuzz(5550), equalTo(FizzBuzz.BUZZFAKEDELUXE));
 		assertThat(FizzBuzz.fizzBuzz(560), equalTo(FizzBuzz.BUZZFAKEDELUXE));
 		assertThat(FizzBuzz.fizzBuzz(50), equalTo(FizzBuzz.BUZZFAKEDELUXE));
+		assertThat(FizzBuzz.fizzBuzz(5), equalTo(FizzBuzz.BUZZFAKEDELUXE));
+		assertThat(FizzBuzz.fizzBuzz(65), equalTo(FizzBuzz.BUZZFAKEDELUXE));
+		assertThat(FizzBuzz.fizzBuzz(9995), equalTo(FizzBuzz.BUZZFAKEDELUXE));
 	}
 	
 	@Test
@@ -99,7 +102,6 @@ public class FizzBuzzTest {
 	
 	@Test
 	public void testMultipleOfThreeAndContaining() {
-		assertThat(FizzBuzz.fizzBuzz(3), equalTo(FizzBuzz.FIZZDELUXE));
 		assertThat(FizzBuzz.fizzBuzz(63), equalTo(FizzBuzz.FIZZDELUXE));
 	}
 	
@@ -108,6 +110,7 @@ public class FizzBuzzTest {
 		assertThat(FizzBuzz.fizzBuzz(13), equalTo(FizzBuzz.FIZZ));
 		assertThat(FizzBuzz.fizzBuzz(37), equalTo(FizzBuzz.FIZZ));
 		assertThat(FizzBuzz.fizzBuzz(103), equalTo(FizzBuzz.FIZZ));
+		assertThat(FizzBuzz.fizzBuzz(9999), equalTo(FizzBuzz.FIZZ));
 	}
 	
 	@Test
@@ -118,10 +121,8 @@ public class FizzBuzzTest {
 	
 	@Test
 	public void testMultipleOfFiveAndContaining() {
-		assertThat(FizzBuzz.fizzBuzz(5), equalTo(FizzBuzz.BUZZDELUXE));
 		assertThat(FizzBuzz.fizzBuzz(50), equalTo(FizzBuzz.BUZZDELUXE));
-		assertThat(FizzBuzz.fizzBuzz(65), equalTo(FizzBuzz.BUZZDELUXE));
-		assertThat(FizzBuzz.fizzBuzz(9995), equalTo(FizzBuzz.BUZZDELUXE));
+		
 	}
 	
 	@Test

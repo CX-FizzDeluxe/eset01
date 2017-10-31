@@ -66,7 +66,7 @@ public class FizzBuzz {
     }
     
     public static boolean numberIsDeluxe(Integer number) {
-    	return number % 5 == 0 && numberContainsDigit(number, "5") || number % 3 == 0  && numberContainsDigit(number, "3");
+    	return (number % 5 == 0 && numberContainsDigit(number, "5")) || (number % 3 == 0  && numberContainsDigit(number, "3"));
     }
 
 }
