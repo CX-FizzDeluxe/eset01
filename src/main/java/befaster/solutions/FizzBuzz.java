@@ -6,7 +6,11 @@ public class FizzBuzz {
 	
 	public static final String FIZZ = "fizz";
 	public static final String BUZZ = "buzz";
+	public static final String DELUXE = "deluxe";
 	public static final String FIZZBUZZ = "fizz buzz";
+	public static final String FIZZDELUXE = "fizz deluxe";
+	public static final String BUZZDELUXE = "buzz deluxe";
+	public static final String FIZZBUZZDELUXE = "fizz buzz deluxe";
 
     public static String fizzBuzz(Integer number) {
     	String output = "";
