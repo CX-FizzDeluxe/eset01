@@ -11,11 +11,11 @@ public class FizzBuzz {
     public static String fizzBuzz(Integer number) {
     	String output = "";
     	
-        if (number % 3 == 0) {
+        if (number % 3 == 0 || numberContainsDigit(number, "3")) {
         	output += FIZZ;
         }
         
-        if (number % 5 == 0) {
+        if (number % 5 == 0 || numberContainsDigit(number, "5")) {
         	output += BUZZ;
         }
         
@@ -26,6 +26,19 @@ public class FizzBuzz {
         }
         
         return output;
+    }
+    
+    public static boolean numberContainsDigit(Integer number, String digit) {
+    	char[] nums = number.toString().toCharArray();
+    	char[] digits = digit.toCharArray();
+    	
+    	for (char num : nums) {
+    		if (num == digits[0]) {
+    			return true;
+    		}
+    	}
+    	
+    	return false;
     }
 
 }
