@@ -57,17 +57,17 @@ public class FizzBuzzTest {
 	public void testMultipleOfFiveAndFakeDeluxe() {
 		assertThat(FizzBuzz.fizzBuzz(55), equalTo(FizzBuzz.BUZZFAKEDELUXE));
 		assertThat(FizzBuzz.fizzBuzz(5555), equalTo(FizzBuzz.BUZZFAKEDELUXE));
+		assertThat(FizzBuzz.fizzBuzz(5), equalTo(FizzBuzz.BUZZFAKEDELUXE));
+		assertThat(FizzBuzz.fizzBuzz(65), equalTo(FizzBuzz.BUZZFAKEDELUXE));
+		assertThat(FizzBuzz.fizzBuzz(9995), equalTo(FizzBuzz.BUZZFAKEDELUXE));
 	}
 	
 	@Test
 	public void testMultipleOfFiveAndTrueDeluxe() {
-		assertThat(FizzBuzz.fizzBuzz(550), equalTo(FizzBuzz.BUZZFAKEDELUXE));
-		assertThat(FizzBuzz.fizzBuzz(5550), equalTo(FizzBuzz.BUZZFAKEDELUXE));
-		assertThat(FizzBuzz.fizzBuzz(560), equalTo(FizzBuzz.BUZZFAKEDELUXE));
-		assertThat(FizzBuzz.fizzBuzz(50), equalTo(FizzBuzz.BUZZFAKEDELUXE));
-		assertThat(FizzBuzz.fizzBuzz(5), equalTo(FizzBuzz.BUZZFAKEDELUXE));
-		assertThat(FizzBuzz.fizzBuzz(65), equalTo(FizzBuzz.BUZZFAKEDELUXE));
-		assertThat(FizzBuzz.fizzBuzz(9995), equalTo(FizzBuzz.BUZZFAKEDELUXE));
+		assertThat(FizzBuzz.fizzBuzz(550), equalTo(FizzBuzz.BUZZDELUXE));
+		assertThat(FizzBuzz.fizzBuzz(5550), equalTo(FizzBuzz.BUZZDELUXE)); // this is not a multiple of 3!
+		assertThat(FizzBuzz.fizzBuzz(560), equalTo(FizzBuzz.BUZZDELUXE));
+		assertThat(FizzBuzz.fizzBuzz(50), equalTo(FizzBuzz.BUZZDELUXE));
 	}
 	
 	@Test
