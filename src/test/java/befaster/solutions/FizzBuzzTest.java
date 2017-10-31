@@ -9,6 +9,26 @@ import org.junit.Test;
 public class FizzBuzzTest {
 	
 	@Test
+	public void testDeluxe() {
+		assertTrue(FizzBuzz.numberIsDeluxe(88));
+		assertTrue(FizzBuzz.numberIsDeluxe(777));
+		assertTrue(FizzBuzz.numberIsDeluxe(33));
+		assertTrue(FizzBuzz.numberIsDeluxe(9999));
+		assertTrue(FizzBuzz.numberIsDeluxe(55));
+		assertTrue(FizzBuzz.numberIsDeluxe(5555));
+	}
+	
+	@Test
+	public void testNotDeluxe() {
+		assertTrue(FizzBuzz.numberIsDeluxe(3));
+		assertTrue(FizzBuzz.numberIsDeluxe(65));
+		assertTrue(FizzBuzz.numberIsDeluxe(8275));
+		assertTrue(FizzBuzz.numberIsDeluxe(1112));
+		assertTrue(FizzBuzz.numberIsDeluxe(3111));
+		assertTrue(FizzBuzz.numberIsDeluxe(76));
+	}
+	
+	@Test
 	public void testMultipleOfThreeAndDeluxe() {
 		assertThat(FizzBuzz.fizzBuzz(33), equalTo(FizzBuzz.FIZZDELUXE));
 		assertThat(FizzBuzz.fizzBuzz(9999), equalTo(FizzBuzz.FIZZDELUXE));

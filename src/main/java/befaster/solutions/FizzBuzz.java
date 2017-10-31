@@ -23,6 +23,8 @@ public class FizzBuzz {
         	output += BUZZ;
         }
         
+        if (number)
+        
         if (output.equals(FIZZ+BUZZ)) {
         	output = FIZZBUZZ;
         } else if (output.equals("")) {
@@ -43,6 +45,22 @@ public class FizzBuzz {
     	}
     	
     	return false;
+    }
+    
+    public static boolean numberIsDeluxe(Integer number) {
+    	if (number < 10) {
+    		return false;
+    	}
+    	
+    	char[] nums = number.toString().toCharArray();
+    	
+    	for (char num : nums) {
+    		if (num != nums[0]) {
+    			return false;
+    		}
+    	}
+    	
+    	return true;
     }
 
 }
