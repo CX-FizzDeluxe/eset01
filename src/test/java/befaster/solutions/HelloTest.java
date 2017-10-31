@@ -10,14 +10,14 @@ public class HelloTest {
 
 	@Test
 	public void helloWorldTest() {
-		assertThat(Hello.hello("world"), equalTo("Hello, World!"));
-		assertThat(Hello.hello(" world   "), equalTo("Hello, World!"));
+		assertThat(Hello.hello("world"), equalTo("Hello, world!"));
+		assertThat(Hello.hello(" world   "), equalTo("Hello, world!"));
 	}
 	
 	@Test
 	public void helloStrangerTest() {
-		assertThat(Hello.hello("stranger"), equalTo("Hello, World!"));
-		assertThat(Hello.hello("  stranger   "), equalTo("Hello, World!"));
+		assertThat(Hello.hello("stranger"), equalTo("Hello, stranger!"));
+		assertThat(Hello.hello("  stranger   "), equalTo("Hello, stranger!"));
 	}
 	
 	@Test

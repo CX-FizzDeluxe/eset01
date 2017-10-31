@@ -4,6 +4,12 @@ import org.apache.commons.codec.binary.StringUtils;
 
 public class Hello {
     public static String hello(String friendName) {
-        return "Hello, World!";
+    	if (friendName == null || friendName.trim().equals("")) {
+    		friendName = "World";
+    	} else {
+    		friendName = friendName.trim();
+    	}
+    	
+        return "Hello, " + friendName + "!";
     }
 }
