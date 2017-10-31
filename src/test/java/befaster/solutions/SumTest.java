@@ -10,5 +10,6 @@ public class SumTest {
     @Test
     public void compute_sum() {
         assertThat(Sum.sum(1, 1), equalTo(2));
+        assertThat(Sum.sum(556, 846), equalTo(1402));
     }
 }
