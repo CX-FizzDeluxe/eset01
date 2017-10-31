@@ -5,10 +5,14 @@ public class FizzBuzz {
 	public static final String FIZZ = "fizz";
 	public static final String BUZZ = "buzz";
 	public static final String DELUXE = "deluxe";
+	public static final String FAKEDELUXE = "fake deluxe";
 	public static final String FIZZBUZZ = "fizz buzz";
 	public static final String FIZZDELUXE = "fizz deluxe";
 	public static final String BUZZDELUXE = "buzz deluxe";
 	public static final String FIZZBUZZDELUXE = "fizz buzz deluxe";
+	public static final String FIZZFAKEDELUXE = "fizz fake deluxe";
+	public static final String BUZZFAKEDELUXE = "buzz fake deluxe";
+	public static final String FIZZBUZZFAKEDELUXE = "fizz buzz fake deluxe";
 
     public static String fizzBuzz(Integer number) {
     	String output = "";
@@ -22,7 +26,11 @@ public class FizzBuzz {
         }
         
         if (numberIsDeluxe(number)) {
-        	output = addToOutput(output, DELUXE);
+        	if (numberIsFakeDeluxe(number)) {
+        		output = addToOutput(output, FAKEDELUXE);
+        	} else {
+        		output = addToOutput(output, DELUXE);
+        	}
         }
         
         if (output.equals("")) {
@@ -51,6 +59,10 @@ public class FizzBuzz {
     	}
     	
     	return false;
+    }
+    
+    public static boolean numberIsFakeDeluxe(Integer number) {
+    	return number % 2 != 0 && numberIsDeluxe(number);
     }
     
     public static boolean numberIsDeluxe(Integer number) {
