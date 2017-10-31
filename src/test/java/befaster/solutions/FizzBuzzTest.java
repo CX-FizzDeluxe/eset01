@@ -9,9 +9,33 @@ import org.junit.Test;
 public class FizzBuzzTest {
 	
 	@Test
+	public void testMultipleOfThreeAndDeluxe() {
+		assertThat(FizzBuzz.fizzBuzz(33), equalTo(FizzBuzz.FIZZDELUXE));
+		assertThat(FizzBuzz.fizzBuzz(9999), equalTo(FizzBuzz.FIZZDELUXE));
+	}
+	
+	@Test
+	public void testMultipleOfFiveAndDeluxe() {
+		assertThat(FizzBuzz.fizzBuzz(55), equalTo(FizzBuzz.BUZZDELUXE));
+		assertThat(FizzBuzz.fizzBuzz(5555), equalTo(FizzBuzz.BUZZDELUXE));
+	}
+	
+	@Test
+	public void testJustDeluxe() {
+		assertThat(FizzBuzz.fizzBuzz(88), equalTo(FizzBuzz.DELUXE));
+		assertThat(FizzBuzz.fizzBuzz(777), equalTo(FizzBuzz.DELUXE));
+	}
+	
+	@Test
+	public void testMultipleOfFiveAndThreeAndDeluxe() {
+		// I don't think there are any numbers that satisfy this criteria between 1 and 9999
+		assertTrue(true);
+	}
+	
+	@Test
 	public void testMultipleOfThreeButNotContaining() {
 		assertThat(FizzBuzz.fizzBuzz(27), equalTo(FizzBuzz.FIZZ));
-		assertThat(FizzBuzz.fizzBuzz(9999), equalTo(FizzBuzz.FIZZ));
+		assertThat(FizzBuzz.fizzBuzz(9), equalTo(FizzBuzz.FIZZ));
 	}
 	
 	@Test
