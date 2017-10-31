@@ -1,7 +1,5 @@
 package befaster.solutions;
 
-import befaster.runner.SolutionNotImplementedException;
-
 public class FizzBuzz {
 	
 	public static final String FIZZ = "fizz";
@@ -16,22 +14,30 @@ public class FizzBuzz {
     	String output = "";
     	
         if (number % 3 == 0 || numberContainsDigit(number, "3")) {
-        	output += FIZZ;
+        	output = addToOutput(output, FIZZ);
         }
         
         if (number % 5 == 0 || numberContainsDigit(number, "5")) {
-        	output += BUZZ;
+        	output = addToOutput(output, BUZZ);
         }
         
-        if (number)
+        if (numberIsDeluxe(number)) {
+        	output = addToOutput(output, DELUXE);
+        }
         
-        if (output.equals(FIZZ+BUZZ)) {
-        	output = FIZZBUZZ;
-        } else if (output.equals("")) {
+        if (output.equals("")) {
         	output = number.toString();
         }
         
         return output;
+    }
+    
+    private static String addToOutput(String output, String addition) {
+    	if (output.equals("")) {
+    		return addition;
+    	}
+    	
+    	return output + " " + addition;
     }
     
     public static boolean numberContainsDigit(Integer number, String digit) {

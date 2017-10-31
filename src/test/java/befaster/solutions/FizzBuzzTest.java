@@ -20,12 +20,12 @@ public class FizzBuzzTest {
 	
 	@Test
 	public void testNotDeluxe() {
-		assertTrue(FizzBuzz.numberIsDeluxe(3));
-		assertTrue(FizzBuzz.numberIsDeluxe(65));
-		assertTrue(FizzBuzz.numberIsDeluxe(8275));
-		assertTrue(FizzBuzz.numberIsDeluxe(1112));
-		assertTrue(FizzBuzz.numberIsDeluxe(3111));
-		assertTrue(FizzBuzz.numberIsDeluxe(76));
+		assertFalse(FizzBuzz.numberIsDeluxe(3));
+		assertFalse(FizzBuzz.numberIsDeluxe(65));
+		assertFalse(FizzBuzz.numberIsDeluxe(8275));
+		assertFalse(FizzBuzz.numberIsDeluxe(1112));
+		assertFalse(FizzBuzz.numberIsDeluxe(3111));
+		assertFalse(FizzBuzz.numberIsDeluxe(76));
 	}
 	
 	@Test
@@ -43,7 +43,7 @@ public class FizzBuzzTest {
 	@Test
 	public void testJustDeluxe() {
 		assertThat(FizzBuzz.fizzBuzz(88), equalTo(FizzBuzz.DELUXE));
-		assertThat(FizzBuzz.fizzBuzz(777), equalTo(FizzBuzz.DELUXE));
+		assertThat(FizzBuzz.fizzBuzz(44), equalTo(FizzBuzz.DELUXE));
 	}
 	
 	@Test
