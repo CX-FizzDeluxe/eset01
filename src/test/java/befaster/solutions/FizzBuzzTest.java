@@ -49,7 +49,7 @@ public class FizzBuzzTest {
 	@Test
 	public void testMultipleOfFiveAndThreeAndDeluxe() {
 		// I don't think there are any numbers that satisfy this criteria between 1 and 9999
-		assertTrue(true);
+		assertThat(FizzBuzz.fizzBuzz(555), equalTo(FizzBuzz.FIZZBUZZDELUXE));
 	}
 	
 	@Test
