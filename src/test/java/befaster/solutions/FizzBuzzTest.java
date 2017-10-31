@@ -22,18 +22,18 @@ public class FizzBuzzTest {
 	
 	@Test
 	public void testFakeDeluxe() {
+		assertTrue(FizzBuzz.numberIsFakeDeluxe(3));
 		assertTrue(FizzBuzz.numberIsFakeDeluxe(33));
 		assertTrue(FizzBuzz.numberIsFakeDeluxe(55));
 		assertTrue(FizzBuzz.numberIsFakeDeluxe(5555));
+		assertTrue(FizzBuzz.numberIsFakeDeluxe(65));
+		assertTrue(FizzBuzz.numberIsFakeDeluxe(3111));
+		assertTrue(FizzBuzz.numberIsFakeDeluxe(8275));
 	}
 	
 	@Test
 	public void testNotDeluxe() {
-		assertFalse(FizzBuzz.numberIsDeluxe(3));
-		assertFalse(FizzBuzz.numberIsDeluxe(65));
-		assertFalse(FizzBuzz.numberIsDeluxe(8275));
 		assertFalse(FizzBuzz.numberIsDeluxe(1112));
-		assertFalse(FizzBuzz.numberIsDeluxe(3111));
 		assertFalse(FizzBuzz.numberIsDeluxe(76));
 		assertFalse(FizzBuzz.numberIsFakeDeluxe(9999));
 		assertFalse(FizzBuzz.numberIsFakeDeluxe(777));
@@ -102,7 +102,12 @@ public class FizzBuzzTest {
 	
 	@Test
 	public void testMultipleOfThreeAndContaining() {
-		assertThat(FizzBuzz.fizzBuzz(63), equalTo(FizzBuzz.FIZZDELUXE));
+		assertThat(FizzBuzz.fizzBuzz(63), equalTo(FizzBuzz.FIZZFAKEDELUXE));
+	}
+	
+	@Test
+	public void testContainsThree() {
+		assertTrue(FizzBuzz.numberContainsDigit(63, "3"));
 	}
 	
 	@Test
@@ -133,7 +138,7 @@ public class FizzBuzzTest {
 	
 	@Test
 	public void testMultipleOfBoth() {
-		assertThat(FizzBuzz.fizzBuzz(15), equalTo(FizzBuzz.FIZZBUZZ));
+		assertThat(FizzBuzz.fizzBuzz(15), equalTo(FizzBuzz.FIZZBUZZFAKEDELUXE));
 		assertThat(FizzBuzz.fizzBuzz(60), equalTo(FizzBuzz.FIZZBUZZ));
 		assertThat(FizzBuzz.fizzBuzz(120), equalTo(FizzBuzz.FIZZBUZZ));
 	}
