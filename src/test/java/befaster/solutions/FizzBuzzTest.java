@@ -11,6 +11,11 @@ public class FizzBuzzTest {
 	@Test
 	public void testDeluxe() {
 		assertTrue(FizzBuzz.numberIsDeluxe(88));
+		assertTrue(FizzBuzz.numberIsDeluxe(44));
+	}
+	
+	@Test
+	public void testFakeDeluxe() {
 		assertTrue(FizzBuzz.numberIsDeluxe(777));
 		assertTrue(FizzBuzz.numberIsDeluxe(33));
 		assertTrue(FizzBuzz.numberIsDeluxe(9999));
