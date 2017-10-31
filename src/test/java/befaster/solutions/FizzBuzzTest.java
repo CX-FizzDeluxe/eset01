@@ -47,10 +47,7 @@ public class FizzBuzzTest {
 	
 	@Test
 	public void testMultipleOfThreeAndDeluxe() {
-		// no longer exists
-				for (int i = 1; i < 1000; i++) {
-					assertFalse(FizzBuzz.fizzBuzz(i).equals(FizzBuzz.FIZZDELUXE));
-				}
+		assertThat(FizzBuzz.fizzBuzz(36), equalTo(FizzBuzz.FIZZDELUXE));
 	}
 	
 	@Test
@@ -65,7 +62,7 @@ public class FizzBuzzTest {
 	@Test
 	public void testMultipleOfFiveAndTrueDeluxe() {
 		assertThat(FizzBuzz.fizzBuzz(550), equalTo(FizzBuzz.BUZZDELUXE));
-		assertThat(FizzBuzz.fizzBuzz(5550), equalTo(FizzBuzz.BUZZDELUXE)); // this is not a multiple of 3!
+		
 		assertThat(FizzBuzz.fizzBuzz(560), equalTo(FizzBuzz.BUZZDELUXE));
 		assertThat(FizzBuzz.fizzBuzz(50), equalTo(FizzBuzz.BUZZDELUXE));
 	}
@@ -89,9 +86,7 @@ public class FizzBuzzTest {
 	@Test
 	public void testMultipleOfFiveAndThreeAndDeluxe() {
 		assertThat(FizzBuzz.fizzBuzz(555), equalTo(FizzBuzz.FIZZBUZZFAKEDELUXE));
-		for (int i = 1; i < 1000; i++) {
-			assertFalse(FizzBuzz.fizzBuzz(i).equals(FizzBuzz.FIZZBUZZDELUXE));
-		}
+		assertThat(FizzBuzz.fizzBuzz(5550), equalTo(FizzBuzz.FIZZBUZZDELUXE)); // this is a multiple of 3!
 	}
 	
 	@Test
