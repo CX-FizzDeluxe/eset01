@@ -66,19 +66,7 @@ public class FizzBuzz {
     }
     
     public static boolean numberIsDeluxe(Integer number) {
-    	if (number < 10) {
-    		return false;
-    	}
-    	
-    	char[] nums = number.toString().toCharArray();
-    	
-    	for (char num : nums) {
-    		if (num != nums[0]) {
-    			return false;
-    		}
-    	}
-    	
-    	return true;
+    	return number % 5 == 0 && numberContainsDigit(number, "5") || number % 3 == 0  && numberContainsDigit(number, "3");
     }
 
 }
